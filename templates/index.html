@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarut Katkaeo | Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <span class="logo">Sarut.</span>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero / About -->
+    <section id="about">
+        <div class="container">
+            <p class="greeting">Hi there 👋 I'm</p>
+            <h1>Sarut <span>Katkaeo</span></h1>
+            <p class="role">Computer Engineering Student, Year 3 @ Rangsit University</p>
+            <p class="bio">
+                Computer Engineering student seeking a Software Development 
+                or Data Analyst internship. Interested in building software systems 
+                and learning modern development technologies.
+            </p>
+            <div class="hero-buttons">
+    <a href="#contact" class="btn">Contact Me</a>
+    <a href="#projects" class="btn-outline">View Projects</a>
+    <a href="{{ url_for('static', filename='RESUME SARUT KATKAEO COMPUTER ENGINEER (3).pdf') }}" 
+        class="btn-outline" target="_blank">📄 Download Resume</a>
+</div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-group">
+                <div class="skill-group-item">
+                    <h4>Programming</h4>
+                    <div class="skill-tags">
+                        <span class="skill-card">🐍 Python</span>
+                    </div>
+                </div>
+                <div class="skill-group-item">
+                    <h4>Web</h4>
+                    <div class="skill-tags">
+                        <span class="skill-card">🌐 HTML</span>
+                        <span class="skill-card">🎨 CSS</span>
+                        <span class="skill-card">⚙️ Flask</span>
+                    </div>
+                </div>
+                <div class="skill-group-item">
+                    <h4>Tools & Database</h4>
+                    <div class="skill-tags">
+                        <span class="skill-card">📂 Git</span>
+                        <span class="skill-card">💻 VS Code</span>
+                        <span class="skill-card">🔌 Arduino</span>
+                        <span class="skill-card">📱 Blynk</span>
+                        <span class="skill-card">🗄️ SQL</span>
+                    </div>
+                </div>
+                <div class="skill-group-item">
+                    <h4>Interests</h4>
+                    <div class="skill-tags">
+                        <span class="skill-card">🖥️ Software Dev</span>
+                        <span class="skill-card">🌍 Web Dev</span>
+                        <span class="skill-card">🤖 Robotics</span>
+                        <span class="skill-card">📡 IoT Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>🤖 Self-Balancing Robot</h3>
+                    <p>Developed a two-wheel self-balancing robot using sensor-based control. Implemented stabilization system to maintain balance in real time and controlled movement via remote controller.</p>
+                    <div class="tag-row">
+                        <span class="tag">Python</span>
+                        <span class="tag">Arduino</span>
+                        <span class="tag">Embedded</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>🌡️ IoT Temperature Monitoring</h3>
+                    <p>Built an IoT monitoring system using temperature sensors. Collected real-time data and sent alerts via Blynk mobile application.</p>
+                    <div class="tag-row">
+                        <span class="tag">IoT</span>
+                        <span class="tag">Arduino</span>
+                        <span class="tag">Blynk</span>
+                        <span class="tag">SQL</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>🌐 Portfolio Website</h3>
+                    <p>Personal portfolio website built with Python Flask. Showcases projects, skills, and contact information.</p>
+                    <div class="tag-row">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">HTML/CSS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+<section id="contact">
+    <div class="container">
+        <h2>Contact</h2>
+        <p>Feel free to reach out — I'm open to internship opportunities!</p>
+        <div class="contact-links">
+            <a href="tel:0611818696">📞 061-181-8696</a>
+            <a href="mailto:sarutx4@gmail.com">📧 sarutx4@gmail.com</a>
+            <a href="https://github.com/sarut1" target="_blank">💻 GitHub</a>
+            <a href="https://www.linkedin.com/in/sarut-katkaeo-b45a673aa/" target="_blank">🔗 LinkedIn</a>
+        </div>
+    </div>
+</section>
+
+    <footer>
+        <p>© 2026 Sarut Katkaeo · Computer Engineering @ Rangsit University · Built with Flask 🐍</p>
+    </footer>
+    <!-- Active Nav Script -->
+<script>
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 80;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
